@@ -90,8 +90,23 @@ namespace Control
 
         private void button2_Click(object sender, EventArgs e)
         {
-            label2.Text = maskedTextBox1.Text;
-            timer2.Start();
+            bool b = true;
+            if (b == true)
+            {
+                label2.Text = maskedTextBox2.Text;
+                timer2.Start();
+                maskedTextBox2.Visible = false;
+                button2.Text = "Убрать будильник";
+                b = false;
+            }
+            else 
+            {
+                label2.Text = "00:00";
+                timer2.Stop();
+                maskedTextBox2.Visible = true;
+                button2.Text = "Завести будильник";
+            }
+
         }
     }
 }
